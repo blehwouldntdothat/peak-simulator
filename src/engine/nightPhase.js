@@ -14,7 +14,8 @@ export function runNightPhase(state) {
 
     state.log.push({
       text: result.text,
-      image: result.image
+      image: result.image,
+      extraImage: result.extraImage || null
     });
 
     if (result.killed && player.alive) {
@@ -25,4 +26,3 @@ export function runNightPhase(state) {
     }
   });
 }
-
