@@ -15,21 +15,21 @@ const globalDayEvents = [
   (player, biome) => ({
     text: `${player.name} finds a footprint from a scout of the past.`,
     image: player.image,
-    extraImage: "images/global/Footprint.png",
+    extraImage: "images/badge/Footprint.png",
     killed: false
   }),
 
   (player, biome) => ({
     text: `${player.name} strays too far away from their friends and has an unfortunate encounter with the Scoutmaster.`,
     image: player.image,
-    extraImage: "images/global/Scoutmaster.png",
+    extraImage: "images/hazards/Scoutmaster.png",
     killed: true
   }),
 
   (player, biome) => ({
     text: `${player.name} finds a First Aid Kit in a luggage and treats their wounds.`,
     image: player.image,
-    extraImage: "images/global/First_Aid_Kit.png",
+    extraImage: "images/items/First_Aid_Kit.png",
     killed: false
   }),
 ];
@@ -38,7 +38,7 @@ const globalNightEvents = [
   (player, biome) => ({
     text: `${player.name} guides their allies with a lantern.`,
     image: player.image,
-    extraImage: "images/global/Lantern.png",
+    extraImage: "images/items/Lantern.png",
     killed: false
   }),
 ];
