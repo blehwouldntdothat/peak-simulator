@@ -24,7 +24,7 @@ export const alpineDayEvents = [
     text: `${player.name} heals all remaining survivors with a remedy fungus.`,
     image: player.image,
     extraImage: "images/hazards/Remedy_Fungus.png",
-    killed: true
+    killed: false
   }),
 
   (player, biome) => ({
