@@ -1,6 +1,7 @@
 import { BIOME_ORDER } from "./data/biomes.js";
 import { cast } from "./data/cast.js";
 import { settings } from "./data/settings.js";
+
 import { runDayPhase } from "./engine/dayPhase.js";
 import { runNightPhase } from "./engine/nightPhase.js";
 import { runCampfirePhase } from "./engine/campfirePhase.js";
@@ -11,7 +12,7 @@ import { renderEvents, renderSummary, showScreen } from "./ui.js";
 export const simState = {
   biomeIndex: 0,
   biome: null,
-  phase: "day", // day → night → campfire
+  phase: "day",
   dayNumber: 1,
   log: []
 };
@@ -43,24 +44,21 @@ export function startSimulation() {
   simState.dayNumber = 1;
   simState.log = [];
 
+  // FIX: Generate the first day immediately
+  runDayPhase(simState);
+  simState.phase = "night";
+
   renderEvents(simState);
+  showScreen("simulation-screen");
 }
 
 export function proceedSimulation() {
   const biome = simState.biome;
 
-  // PEAK is final summary only
   if (biome === "peak") {
     const placements = computePlacements();
     renderSummary(placements);
     showScreen("summary-screen");
-    return;
-  }
-
-  if (simState.phase === "day") {
-    runDayPhase(simState);
-    simState.phase = "night";
-    renderEvents(simState);
     return;
   }
 
@@ -74,14 +72,15 @@ export function proceedSimulation() {
   if (simState.phase === "campfire") {
     runCampfirePhase(simState);
 
-    // Statue resurrection (except Kiln/Peak)
     applyStatueResurrection(simState);
 
-    // Move to next biome
     simState.biomeIndex++;
     simState.biome = resolveBiome(simState.biomeIndex);
     simState.phase = "day";
     simState.dayNumber++;
+
+    runDayPhase(simState);
+    simState.phase = "night";
 
     renderEvents(simState);
     return;
