@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Peak Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div id="main-menu" class="screen active">
+    <h1>Peak Simulator</h1>
+
+    <section class="menu-section">
+      <h2>Cast</h2>
+      <div id="cast-list"></div>
+
+      <div class="add-cast">
+        <input type="text" id="cast-name" placeholder="Name" />
+        <input type="file" id="cast-image" accept="image/*" />
+        <button id="add-cast-btn">Add Character</button>
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <h2>Biome Settings</h2>
+
+      <label>Biome 2:
+        <select id="biome2-select">
+          <option value="random">Random</option>
+          <option value="tropics">Tropics</option>
+          <option value="roots">Roots</option>
+        </select>
+      </label>
+
+      <label>Biome 3:
+        <select id="biome3-select">
+          <option value="random">Random</option>
+          <option value="alpine">Alpine</option>
+          <option value="mesa">Mesa</option>
+        </select>
+      </label>
+
+      <label class="checkbox-row">
+        <input type="checkbox" id="statue-toggle" />
+        Statue Active (revives dead players until Kiln)
+      </label>
+    </section>
+
+    <button id="start-sim-btn" class="primary-btn">Start Simulation</button>
+  </div>
+
+  <div id="simulation-screen" class="screen">
+    <h1 id="sim-title"></h1>
+
+    <div id="event-container"></div>
+
+    <button id="proceed-btn" class="primary-btn">Proceed</button>
+  </div>
+
+  <div id="summary-screen" class="screen">
+    <h1>Peak Summary</h1>
+
+    <div id="summary-container"></div>
+
+    <button id="return-menu-btn" class="primary-btn">Return to Menu</button>
+  </div>
+
+
+  <script type="module" src="./src/mainMenu.js"></script>
+  <script type="module" src="./src/ui.js"></script>
+  <script type="module" src="./src/simulator.js"></script>
+
+</body>
+</html>
