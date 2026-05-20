@@ -9,3 +9,4 @@ export function runCampfirePhase(state) {
   state.log.push(`Alive: ${alive.map(a => a.name).join(", ")}`);
   state.log.push(`Dead: ${dead.map(d => d.name).join(", ")}`);
 }
+
