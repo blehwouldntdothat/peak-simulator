@@ -118,7 +118,13 @@ h1, h2 {
   border-bottom: 1px solid #ccc;
 }
 
-.event-card img {
+.event-images {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.main-icon {
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -126,9 +132,39 @@ h1, h2 {
   object-fit: cover;
 }
 
+.extra-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  border: 3px solid black;
+  object-fit: cover;
+}
+
 .event-text {
   font-size: 1rem;
   max-width: 600px;
+}
+
+/* CAMPFIRE ROW */
+.campfire-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.campfire-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid black;
+  object-fit: cover;
+}
+
+.dead-icon {
+  filter: grayscale(100%);
+  opacity: 0.7;
 }
 
 /* SUMMARY */
