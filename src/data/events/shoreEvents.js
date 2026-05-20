@@ -37,7 +37,7 @@ export const shoreDayEvents = [
   (player, biome) => ({
     text: `${player.name} keels over after eating one too many green crispberries.`,
     image: player.image,
-    extraImage: "images/hazards/Green_Crispberry.png",
+    extraImage: "images/items/Green_Crispberry.png",
     killed: true
   })
 ];
