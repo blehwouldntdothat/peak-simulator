@@ -44,14 +44,14 @@ export const alpineDayEvents = [
   (player, biome) => ({
     text: `${player.name} becomes blinded by a flash bulb.`,
     image: player.image,
-    extraImage: "images/hazards/Flash_Bulb.png",
+    extraImage: "images/hazards/Flash Bulb.png",
     killed: false
   }),
     
   (player, biome) => ({
     text: `${player.name} becomes blinded by a flash bulb and walks off the edge of the mountain.`,
     image: player.image,
-    extraImage: "images/hazards/Flash_Bulb.png",
+    extraImage: "images/hazards/Flash Bulb.png",
     killed: true
   }),
     
@@ -72,9 +72,42 @@ export const alpineDayEvents = [
   (player, biome) => ({
     text: `${player.name} climbs a rusty piton and snaps it off, accidentally separating themselves from the rest of the group.`,
     image: player.image,
-    extraImage: "images/hazards/Icicle.png",
+    extraImage: "images/hazards/Rusty Piton.png",
     killed: false
-  })
+  }),
+    
+  (player, biome) => ({
+    text: `${player.name} finds a heat pack in luggage.`,
+    image: player.image,
+    extraImage: "images/items/Heat_Pack.png",
+    killed: false
+  }),
+    
+  (player, biome) => ({
+    text: `${player.name} warms up their allies with a lantern.`,
+    image: player.image,
+    extraImage: "images/items/Lantern.png",
+    killed: false
+  }),
+    
+  (player, biome) => ({
+    text: `${player.name} launches a chain from one ledge to another.`,
+    image: player.image,
+    extraImage: "images/items/Chain_Launcher.png",
+    killed: false
+    
+  (player, biome) => ({
+    text: `${player.name} runs out of stamina while climbing a chain, falling to their death.`,
+    image: player.image,
+    extraImage: "images/items/Chain_Launcher.png",
+    killed: true
+  }),
+    
+  (player, biome) => ({
+    text: `${player.name} uses a portable stove for heat.`,
+    image: player.image,
+    extraImage: "images/items/Portable_Stove.png",
+    killed: false
 ];
 
 export const alpineNightEvents = [
@@ -103,7 +136,7 @@ export const alpineNightEvents = [
     text: `${player.name} heals all remaining survivors with a remedy fungus.`,
     image: player.image,
     extraImage: "images/hazards/Remedy_Fungus.png",
-    killed: true
+    killed: false
   }),
 
   (player, biome) => ({
@@ -123,14 +156,14 @@ export const alpineNightEvents = [
   (player, biome) => ({
     text: `${player.name} becomes blinded by a flash bulb.`,
     image: player.image,
-    extraImage: "images/hazards/Flash_Bulb.png",
+    extraImage: "images/hazards/Flash Bulb.png",
     killed: false
   }),
     
   (player, biome) => ({
     text: `${player.name} becomes blinded by a flash bulb and walks off the edge of the mountain.`,
     image: player.image,
-    extraImage: "images/hazards/Flash_Bulb.png",
+    extraImage: "images/hazards/Flash Bulb.png",
     killed: true
   }),
     
@@ -151,7 +184,40 @@ export const alpineNightEvents = [
   (player, biome) => ({
     text: `${player.name} climbs a rusty piton and snaps it off, accidentally separating themselves from the rest of the group.`,
     image: player.image,
-    extraImage: "images/hazards/Icicle.png",
+    extraImage: "images/hazards/Rusty Piton.png",
     killed: false
-  })
+  }),
+    
+  (player, biome) => ({
+    text: `${player.name} finds a heat pack in luggage.`,
+    image: player.image,
+    extraImage: "images/items/Heat_Pack.png",
+    killed: false
+  }),
+    
+  (player, biome) => ({
+    text: `${player.name} warms up their allies with a lantern.`,
+    image: player.image,
+    extraImage: "images/items/Lantern.png",
+    killed: false
+  }),
+    
+  (player, biome) => ({
+    text: `${player.name} launches a chain from one ledge to another.`,
+    image: player.image,
+    extraImage: "images/items/Chain_Launcher.png",
+    killed: false
+    
+  (player, biome) => ({
+    text: `${player.name} runs out of stamina while climbing a chain, falling to their death.`,
+    image: player.image,
+    extraImage: "images/items/Chain_Launcher.png",
+    killed: true
+  }),
+    
+  (player, biome) => ({
+    text: `${player.name} uses a portable stove for heat.`,
+    image: player.image,
+    extraImage: "images/items/Portable_Stove.png",
+    killed: false
 ];
