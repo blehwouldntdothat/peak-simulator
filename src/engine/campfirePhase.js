@@ -1,12 +1,27 @@
 import { cast } from "../data/cast.js";
 
 export function runCampfirePhase(state) {
-  state.log.push(`--- CAMPFIRE SUMMARY (${state.biome}) ---`);
+  // Reset log for this phase
+  state.log = [];
+
+  // Header (must be an object)
+  state.log.push({
+    text: `--- CAMPFIRE SUMMARY (${state.biome}) ---`,
+    image: ""
+  });
 
   const alive = cast.filter(c => c.alive);
   const dead = cast.filter(c => !c.alive);
 
-  state.log.push(`Alive: ${alive.map(a => a.name).join(", ")}`);
-  state.log.push(`Dead: ${dead.map(d => d.name).join(", ")}`);
-}
+  // Alive summary
+  state.log.push({
+    text: `Alive: ${alive.length ? alive.map(a => a.name).join(", ") : "None"}`,
+    image: alive[0]?.image || ""
+  });
 
+  // Dead summary
+  state.log.push({
+    text: `Dead: ${dead.length ? dead.map(d => d.name).join(", ") : "None"}`,
+    image: dead[0]?.image || ""
+  });
+}
