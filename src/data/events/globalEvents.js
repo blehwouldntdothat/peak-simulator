@@ -64,3 +64,4 @@ export function getBiomeEvents(biome, phase) {
   const globals = phase === "day" ? globalDayEvents : globalNightEvents;
   return [...biomeEvents, ...globals];
 }
+
