@@ -23,3 +23,4 @@ export const shoreNightEvents = [
     killed: false
   })
 ];
+
