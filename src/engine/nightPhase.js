@@ -4,19 +4,33 @@ import { cast } from "../data/cast.js";
 export function runNightPhase(state) {
   const events = getBiomeEvents(state.biome, "night");
 
-  state.log.push(`--- NIGHT ${state.day} (${state.biome}) ---`);
+  // Reset log for this phase
+  state.log = [];
+
+  // Add header as an object (UI requires text + image)
+  state.log.push({
+    text: `--- NIGHT ${state.dayNumber} (${state.biome}) ---`,
+    image: ""
+  });
 
   cast.forEach(player => {
     if (!player.alive) return;
 
     const event = events[Math.floor(Math.random() * events.length)];
-    const result = event(player);
+    const result = event(player, state.biome);
 
-    state.log.push(result.text);
+    // Push event as object
+    state.log.push({
+      text: result.text,
+      image: result.image
+    });
 
-    if (result.killed) {
+    // Handle death
+    if (result.killed && player.alive) {
       player.alive = false;
-      player.deathOrder = ++state.deathCounter;
+      player.deathOrder =
+        (player.deathOrder ?? 0) ||
+        (cast.filter(c => c.deathOrder !== null).length + 1);
     }
   });
 }
