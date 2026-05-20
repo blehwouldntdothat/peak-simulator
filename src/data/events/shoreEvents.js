@@ -79,3 +79,4 @@ export const shoreNightEvents = [
     killed: true
   })
 ];
+
