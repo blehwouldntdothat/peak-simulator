@@ -1,6 +1,4 @@
 export const shoreDayEvents = [
-
-  // Safe events
   (player, biome) => ({
     text: `${player.name} gets hit in the back with a Flying Disc.`,
     image: player.image,
@@ -22,15 +20,13 @@ export const shoreDayEvents = [
     killed: false
   }),
 
-  // Mild danger
   (player, biome) => ({
     text: `${player.name} slips off the mountain after coming into contact with a jellyfish.`,
     image: player.image,
     extraImage: "images/hazards/Jellyfish.png",
-    killed: false
+    killed: true
   }),
 
-  // Lethal event
   (player, biome) => ({
     text: `${player.name} is poisoned by an urchin and tumbles off the mountain.`,
     image: player.image,
@@ -40,8 +36,6 @@ export const shoreDayEvents = [
 ];
 
 export const shoreNightEvents = [
-
-  // Safe events
   (player, biome) => ({
     text: `${player.name} gets hit in the back with a Flying Disc.`,
     image: player.image,
@@ -56,7 +50,6 @@ export const shoreNightEvents = [
     killed: false
   }),
 
-  // Mild danger
   (player, biome) => ({
     text: `${player.name} slips off the mountain after coming into contact with a jellyfish.`,
     image: player.image,
@@ -64,7 +57,6 @@ export const shoreNightEvents = [
     killed: false
   }),
 
-  // Lethal event
   (player, biome) => ({
     text: `${player.name} is poisoned by an urchin and tumbles off the mountain.`,
     image: player.image,
