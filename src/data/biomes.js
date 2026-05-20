@@ -17,3 +17,4 @@ export const BIOME_ORDER = [
   BIOMES.KILN,
   BIOMES.PEAK
 ];
+
