@@ -12,7 +12,7 @@ import { renderEvents, renderSummary, showScreen } from "./ui.js";
 export const simState = {
   biomeIndex: 0,
   biome: null,
-  phase: "day",
+  phase: "day",   // "day" | "night" | "campfire"
   dayNumber: 1,
   log: []
 };
@@ -44,10 +44,8 @@ export function startSimulation() {
   simState.dayNumber = 1;
   simState.log = [];
 
-  // FIX: Generate the first day immediately
+  // First screen: SHORE — DAY
   runDayPhase(simState);
-  simState.phase = "night";
-
   renderEvents(simState);
   showScreen("simulation-screen");
 }
@@ -55,6 +53,7 @@ export function startSimulation() {
 export function proceedSimulation() {
   const biome = simState.biome;
 
+  // Peak is summary only
   if (biome === "peak") {
     const placements = computePlacements();
     renderSummary(placements);
@@ -62,26 +61,40 @@ export function proceedSimulation() {
     return;
   }
 
-  if (simState.phase === "night") {
+  if (simState.phase === "day") {
+    // Move to NIGHT
+    simState.phase = "night";
     runNightPhase(simState);
+    renderEvents(simState);
+    return;
+  }
+
+  if (simState.phase === "night") {
+    // Move to CAMPFIRE
     simState.phase = "campfire";
+    runCampfirePhase(simState);
     renderEvents(simState);
     return;
   }
 
   if (simState.phase === "campfire") {
-    runCampfirePhase(simState);
-
+    // Statue + next biome
     applyStatueResurrection(simState);
 
     simState.biomeIndex++;
     simState.biome = resolveBiome(simState.biomeIndex);
+
+    // If we reached PEAK, go straight to summary
+    if (simState.biome === "peak") {
+      const placements = computePlacements();
+      renderSummary(placements);
+      showScreen("summary-screen");
+      return;
+    }
+
     simState.phase = "day";
     simState.dayNumber++;
-
     runDayPhase(simState);
-    simState.phase = "night";
-
     renderEvents(simState);
     return;
   }
