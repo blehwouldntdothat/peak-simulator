@@ -3,3 +3,4 @@ export const settings = {
   biome3: "random", // alpine | mesa | random
   statueActive: false
 };
+
