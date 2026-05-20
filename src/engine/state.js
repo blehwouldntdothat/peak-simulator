@@ -6,3 +6,4 @@ export const state = {
   log: [],
   deathCounter: 0
 };
+
