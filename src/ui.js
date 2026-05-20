@@ -1,7 +1,6 @@
 import { cast } from "./data/cast.js";
 import { proceedSimulation, simState } from "./simulator.js";
 
-// DOM
 const screens = {
   "main-menu": document.getElementById("main-menu"),
   "simulation-screen": document.getElementById("simulation-screen"),
@@ -15,13 +14,11 @@ const proceedBtn = document.getElementById("proceed-btn");
 const summaryContainer = document.getElementById("summary-container");
 const returnMenuBtn = document.getElementById("return-menu-btn");
 
-// Switch screens
 export function showScreen(id) {
   Object.values(screens).forEach(s => s.classList.remove("active"));
   screens[id].classList.add("active");
 }
 
-// Render cast list in main menu
 export function renderCastList() {
   castListEl.innerHTML = "";
 
@@ -32,13 +29,22 @@ export function renderCastList() {
     div.innerHTML = `
       <img src="${player.image}" class="character-img" />
       <div class="name">${player.name}</div>
+      <button class="remove-btn" data-id="${player.id}">Remove</button>
     `;
 
     castListEl.appendChild(div);
   });
+
+  castListEl.querySelectorAll(".remove-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-id");
+      const index = cast.findIndex(c => c.id === id);
+      if (index !== -1) cast.splice(index, 1);
+      renderCastList();
+    });
+  });
 }
 
-// Render events for current phase
 export function renderEvents(state) {
   eventContainer.innerHTML = "";
   simTitle.textContent = `${state.biome.toUpperCase()} — ${state.phase.toUpperCase()}`;
@@ -48,7 +54,7 @@ export function renderEvents(state) {
     card.className = "event-card";
 
     card.innerHTML = `
-      <img src="${entry.image}" />
+      <img src="${entry.image || ""}" />
       <div class="event-text">${entry.text}</div>
     `;
 
@@ -56,7 +62,6 @@ export function renderEvents(state) {
   });
 }
 
-// Render final summary
 export function renderSummary(placements) {
   summaryContainer.innerHTML = "";
 
@@ -80,12 +85,11 @@ export function renderSummary(placements) {
   });
 }
 
-// Proceed button
 proceedBtn.addEventListener("click", () => {
   proceedSimulation();
 });
 
-// Return to menu
 returnMenuBtn.addEventListener("click", () => {
   showScreen("main-menu");
 });
+
