@@ -32,6 +32,13 @@ export const shoreDayEvents = [
     image: player.image,
     extraImage: "images/hazards/Urchin.png",
     killed: true
+  }),
+    
+  (player, biome) => ({
+    text: `${player.name} keels over after eating one too many green crispberries.`,
+    image: player.image,
+    extraImage: "images/hazards/Green_Crispberry.png",
+    killed: true
   })
 ];
 
@@ -62,6 +69,12 @@ export const shoreNightEvents = [
     image: player.image,
     extraImage: "images/hazards/Urchin.png",
     killed: true
+  }),
+    
+  (player, biome) => ({
+    text: `${player.name} keels over after eating one too many green crispberries.`,
+    image: player.image,
+    extraImage: "images/hazards/Green_Crispberry.png",
+    killed: true
   })
 ];
-
