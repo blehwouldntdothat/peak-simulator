@@ -1,5 +1,5 @@
 import { cast } from "./data/cast.js";
-import { proceedSimulation, simState } from "./simulator.js";
+import { proceedSimulation } from "./simulator.js";
 
 const screens = {
   "main-menu": document.getElementById("main-menu"),
@@ -92,4 +92,3 @@ proceedBtn.addEventListener("click", () => {
 returnMenuBtn.addEventListener("click", () => {
   showScreen("main-menu");
 });
-
