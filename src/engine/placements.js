@@ -9,3 +9,4 @@ export function computePlacements() {
 
   return [...alive, ...dead];
 }
+
