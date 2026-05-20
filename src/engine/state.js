@@ -7,3 +7,4 @@ export const state = {
   deathCounter: 0
 };
 
+
