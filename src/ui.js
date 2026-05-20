@@ -53,10 +53,29 @@ export function renderEvents(state) {
     const card = document.createElement("div");
     card.className = "event-card";
 
-    card.innerHTML = `
-      <img src="${entry.image || ""}" />
-      <div class="event-text">${entry.text}</div>
-    `;
+    if (entry.group) {
+      // Campfire group display
+      const icons = entry.group
+        .map(
+          p =>
+            `<img class="campfire-icon ${p.alive ? "" : "dead-icon"}" src="${p.image}">`
+        )
+        .join("");
+
+      card.innerHTML = `
+        <div class="event-text">${entry.text}</div>
+        <div class="campfire-row">${icons}</div>
+      `;
+    } else {
+      // Normal event with optional extra image
+      card.innerHTML = `
+        <div class="event-images">
+          <img class="main-icon" src="${entry.image || ""}">
+          ${entry.extraImage ? `<img class="extra-icon" src="${entry.extraImage}">` : ""}
+        </div>
+        <div class="event-text">${entry.text}</div>
+      `;
+    }
 
     eventContainer.appendChild(card);
   });
