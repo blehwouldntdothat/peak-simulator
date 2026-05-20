@@ -1,26 +1,90 @@
-function lethalText(player) {
-  return {
-    text: `${player.name} misjudges a jump in the Kiln and disappears into the smoke.`,
-    image: player.image,
-    killed: true
-  };
-}
-
 export const kilnDayEvents = [
-  (player) => ({
-    text: `${player.name} climbs through choking ash in the Kiln.`,
+    (player, biome) => ({
+    text: `${player.name} miscalculated a jump, sending them into freefall.`,
     image: player.image,
+    extraImage: "images/items/KilnBridge.png",
+    killed: true
+  }),
+    (player, biome) => ({
+    text: `${player.name} falls into the lava.`,
+    image: player.image,
+    extraImage: "images/items/Lava.png",
+    killed: true
+  }),
+    (player, biome) => ({
+    text: `${player.name} reveals a chain launcher that they had saved in their backpack.`,
+    image: player.image,
+    extraImage: "images/items/Chain_Launcher.png",
     killed: false
   }),
-  lethalText
+    (player, biome) => ({
+    text: `${player.name} burns alive on a hot rock.`,
+    image: player.image,
+    extraImage: "images/items/Hot_Rocks.png",
+    killed: true
+  }),
+    (player, biome) => ({
+    text: `${player.name} places a piton to help themselves and their fellow scouts.`,
+    image: player.image,
+    extraImage: "images/items/Piton.png",
+    killed: false
+  }),
+    (player, biome) => ({
+    text: `${player.name} falls to their death after not having enough stamina to reach a piton.`,
+    image: player.image,
+    extraImage: "images/items/Piton.png",
+    killed: true
+  }),
+    (player, biome) => ({
+    text: `The rising lava catches up to ${player.name}, burning them alive.`,
+    image: player.image,
+    extraImage: "images/items/Lava.png",
+    killed: true
+  })
 ];
 
 export const kilnNightEvents = [
-  (player) => ({
-    text: `${player.name} can barely see through the glowing haze of the Kiln.`,
+    (player, biome) => ({
+    text: `${player.name} miscalculated a jump, sending them into freefall.`,
     image: player.image,
+    extraImage: "images/items/KilnBridge.png",
+    killed: true
+  }),
+    (player, biome) => ({
+    text: `${player.name} falls into the lava.`,
+    image: player.image,
+    extraImage: "images/items/Lava.png",
+    killed: true
+  }),
+    (player, biome) => ({
+    text: `${player.name} reveals a chain launcher that they had saved in their backpack.`,
+    image: player.image,
+    extraImage: "images/items/Chain_Launcher.png",
     killed: false
   }),
-  lethalText
+    (player, biome) => ({
+    text: `${player.name} burns alive on a hot rock.`,
+    image: player.image,
+    extraImage: "images/items/Hot_Rocks.png",
+    killed: true
+  }),
+    (player, biome) => ({
+    text: `${player.name} places a piton to help themselves and their fellow scouts.`,
+    image: player.image,
+    extraImage: "images/items/Piton.png",
+    killed: false
+  }),
+    (player, biome) => ({
+    text: `${player.name} falls to their death after not having enough stamina to reach a piton.`,
+    image: player.image,
+    extraImage: "images/items/Piton.png",
+    killed: true
+  }),
+    (player, biome) => ({
+    text: `The rising lava catches up to ${player.name}, burning them alive.`,
+    image: player.image,
+    extraImage: "images/items/Lava.png",
+    killed: true
+  })
 ];
 
