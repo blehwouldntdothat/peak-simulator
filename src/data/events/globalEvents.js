@@ -237,7 +237,7 @@ const globalNightEvents = [
 ];
 
 /* ---------------------------------------------------------
-   BIOME EVENT ROUTER — now filters globals by blockedBiomes
+   BIOME EVENT ROUTER — filters globals by blockedBiomes
 --------------------------------------------------------- */
 
 export function getBiomeEvents(biome, phase) {
@@ -255,8 +255,9 @@ export function getBiomeEvents(biome, phase) {
 
   const globalsRaw = phase === "day" ? globalDayEvents : globalNightEvents;
 
-  const globals = globalsRaw.filter(ev => {
-    return !ev(player, biome).blockedBiomes?.includes(biome);
+  const globals = globalsRaw.filter(eventFn => {
+    const preview = eventFn({ name: "TEMP", image: "" }, biome);
+    return !preview.blockedBiomes?.includes(biome);
   });
 
   return [...biomeEvents, ...globals];
