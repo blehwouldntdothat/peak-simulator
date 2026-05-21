@@ -14,10 +14,10 @@ export const alpineDayEvents = [
   }),
 
   (player, biome) => ({
-    text: `${player.name} from one side of a ditch to the other using a magic bean.`,
+    text: `${player.name} travels from one side of a ditch to the other using a magic bean.`,
     image: player.image,
-    extraImage: "images/hazards/Magic_Bean.png",
-    killed: true
+    extraImage: "images/items/Magic_Bean.png",
+    killed: false
   }),
     
   (player, biome) => ({
@@ -114,10 +114,10 @@ export const alpineNightEvents = [
   }),
 
   (player, biome) => ({
-    text: `${player.name} from one side of a ditch to the other using a magic bean.`,
+    text: `${player.name} travels from one side of a ditch to the other using a magic bean.`,
     image: player.image,
-    extraImage: "images/hazards/Magic_Bean.png",
-    killed: true
+    extraImage: "images/items/Magic_Bean.png",
+    killed: false
   }),
     
   (player, biome) => ({
