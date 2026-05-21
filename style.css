@@ -221,5 +221,7 @@ h1, h2 {
   text-align: center;
   margin: 20px auto 0;
   -webkit-text-stroke: 1px white; /* thinner border */
+  display: block;
+  width: 100%;
 }
 
