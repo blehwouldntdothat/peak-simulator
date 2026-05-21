@@ -23,7 +23,7 @@ const globalDayEvents = [
     text: `${player.name} strays too far away from their friends and has an unfortunate encounter with the Scoutmaster.`,
     image: player.image,
     extraImage: "images/hazards/Scoutmaster.png",
-    killed: false,
+    killed: true,
     blockedBiomes: []
   }),
 
