@@ -8,13 +8,11 @@ export function runCampfirePhase(state) {
 
   state.log.push({
     text: "Alive:",
-    image: "",
     group: alive
   });
 
   state.log.push({
     text: "Dead:",
-    image: "",
     group: dead
   });
 }
