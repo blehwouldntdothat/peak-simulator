@@ -106,6 +106,8 @@ h1, h2 {
 /* SIMULATION EVENTS */
 #event-container {
   margin-top: 2rem;
+  position: relative;
+  z-index: 2; /* ensures content sits above background */
 }
 
 .event-card {
@@ -118,6 +120,7 @@ h1, h2 {
   border-bottom: 1px solid #ccc;
 }
 
+/* EVENT IMAGES */
 .event-images {
   display: flex;
   gap: 0.5rem;
@@ -192,15 +195,41 @@ h1, h2 {
   font-weight: bold;
 }
 
-/* Background images */
+/* ---------------------------------------------------------
+   NEW ADDITIONS (merged cleanly)
+--------------------------------------------------------- */
+
+/* FULLSCREEN BACKGROUND */
 #simulation-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   transition: background-image 0.4s ease;
+  z-index: 1;
 }
 
-/* Centered translucent event box */
+/* TITLE OUTLINE */
+#sim-title {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-weight: bold;
+  font-size: 32px;
+  text-align: center;
+  margin-top: 20px;
+  text-shadow:
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000;
+}
+
+/* TRANSLUCENT EVENT BOX */
 .event-card {
   background: rgba(0, 0, 0, 0.45);
   padding: 20px;
