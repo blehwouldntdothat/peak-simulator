@@ -26,7 +26,7 @@ export const rootsDayEvents = [
   (player, biome) => ({
     text: `${player.name} crosses a bridge worriedly.`,
     image: player.image,
-    extraImage: "images/hazards/Bridge Roots.png",
+    extraImage: "images/hazards/BridgeRoots.png",
     killed: false
   }),
   (player, biome) => ({
@@ -245,7 +245,7 @@ export const rootsNightEvents = [
   (player, biome) => ({
     text: `${player.name} crosses a bridge worriedly.`,
     image: player.image,
-    extraImage: "images/hazards/Bridge Roots.png",
+    extraImage: "images/hazards/BridgeRoots.png",
     killed: false
   }),
   (player, biome) => ({
