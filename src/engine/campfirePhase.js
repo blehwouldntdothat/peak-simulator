@@ -3,8 +3,10 @@ import { cast } from "../data/cast.js";
 export function runCampfirePhase(state) {
   state.log = [];
 
-  // STATUE REVIVAL
-  if (state.statueEnabled && cast.some(c => !c.alive)) {
+  const hadDead = cast.some(c => !c.alive);
+
+  // Always revive if anyone is dead
+  if (hadDead) {
     cast.forEach(c => {
       c.alive = true;
       c.deathOrder = null;
