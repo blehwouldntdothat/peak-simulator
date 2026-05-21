@@ -217,6 +217,7 @@ h1, h2 {
   font-weight: 900;
   font-size: 32px;
   text-align: center;
-  margin-top: 20px;
-  -webkit-text-stroke: 3px white;
+  margin: 20px auto 0;
+  -webkit-text-stroke: 1px white; /* thinner border */
 }
+
