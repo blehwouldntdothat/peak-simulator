@@ -15,14 +15,14 @@ export function runNightPhase(state) {
     state.log.push({
       text: result.text,
       image: result.image,
-      extraImage: result.extraImage || null
+      extraImage: result.extraImage || null,
+      killed: result.killed
     });
 
     if (result.killed && player.alive) {
       player.alive = false;
       player.deathOrder =
-        (player.deathOrder ?? 0) ||
-        (cast.filter(c => c.deathOrder !== null).length + 1);
+        cast.filter(c => c.deathOrder !== null).length + 1;
     }
   });
 }
