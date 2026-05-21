@@ -18,6 +18,13 @@ body {
   display: block;
 }
 
+#simulation-screen.screen {
+  max-width: none;
+  margin: 0;
+  padding: 2rem;
+}
+
+
 h1, h2 {
   margin-top: 0;
   text-align: center;
@@ -147,7 +154,9 @@ h1, h2 {
 .event-text {
   font-size: 1rem;
   max-width: 600px;
+  margin: 0 auto; /* THIS centers the text block */
 }
+
 
 /* CAMPFIRE ROW */
 .campfire-row {
