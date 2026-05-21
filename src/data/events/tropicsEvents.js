@@ -14,7 +14,7 @@ export const tropicsDayEvents = [
   (player, biome) => ({
     text: `${player.name} finds a chain launcher in lost luggage.`,
     image: player.image,
-    extraImage: "images/items/Chain Launcher.png",
+    extraImage: "images/items/Chain_Launcher.png",
     killed: false
   }),
   (player, biome) => ({
@@ -206,7 +206,7 @@ export const tropicsDayEvents = [
   (player, biome) => ({
     text: `${player.name} eats a black clusterberry.`,
     image: player.image,
-    extraImage: "images/items/Black_Clusterberry.png",
+    extraImage: "images/items/Black Clusterberry.png",
     killed: false
   }),
   (player, biome) => ({
@@ -233,7 +233,7 @@ export const tropicsNightEvents = [
   (player, biome) => ({
     text: `${player.name} finds a chain launcher in lost luggage.`,
     image: player.image,
-    extraImage: "images/items/Chain Launcher.png",
+    extraImage: "images/items/Chain_Launcher.png",
     killed: false
   }),
   (player, biome) => ({
@@ -425,7 +425,7 @@ export const tropicsNightEvents = [
   (player, biome) => ({
     text: `${player.name} eats a black clusterberry.`,
     image: player.image,
-    extraImage: "images/items/Black_Clusterberry.png",
+    extraImage: "images/items/Black Clusterberry.png",
     killed: false
   }),
   (player, biome) => ({
