@@ -203,7 +203,7 @@ h1, h2 {
   font-weight: bold;
 }
 
-/* FULLSCREEN BACKGROUND FIXED */
+/* FULLSCREEN BACKGROUND (SAFE, DOES NOT SHIFT LAYOUT) */
 #simulation-screen {
   background-size: cover;
   background-position: center;
@@ -211,12 +211,12 @@ h1, h2 {
   min-height: 100vh;
 }
 
-/* TITLE WITH WHITE BORDER */
+/* TITLE — BLACK TEXT WITH THICK WHITE OUTLINE (REVERSED COLORS) */
 #sim-title {
   color: black;
-  font-weight: bold;
+  font-weight: 900;
   font-size: 32px;
   text-align: center;
   margin-top: 20px;
-  -webkit-text-stroke: 2px white;
+  -webkit-text-stroke: 3px white;
 }
