@@ -6,6 +6,10 @@ import { mesaDayEvents, mesaNightEvents } from "./mesaEvents.js";
 import { calderaDayEvents, calderaNightEvents } from "./calderaEvents.js";
 import { kilnDayEvents, kilnNightEvents } from "./kilnEvents.js";
 
+/* ---------------------------------------------------------
+   GLOBAL DAY EVENTS
+--------------------------------------------------------- */
+
 const globalDayEvents = [
   (player, biome) => ({
     text: `${player.name} finds a footprint from a scout of the past.`,
@@ -14,6 +18,7 @@ const globalDayEvents = [
     killed: false,
     blockedBiomes: ["caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} strays too far away from their friends and has an unfortunate encounter with the Scoutmaster.`,
     image: player.image,
@@ -21,6 +26,7 @@ const globalDayEvents = [
     killed: false,
     blockedBiomes: []
   }),
+
   (player, biome) => ({
     text: `${player.name} finds a First Aid Kit in a luggage and treats their wounds.`,
     image: player.image,
@@ -28,6 +34,7 @@ const globalDayEvents = [
     killed: false,
     blockedBiomes: []
   }),
+
   (player, biome) => ({
     text: `${player.name} guides their allies with a lantern.`,
     image: player.image,
@@ -35,6 +42,7 @@ const globalDayEvents = [
     killed: false,
     blockedBiomes: []
   }),
+
   (player, biome) => ({
     text: `${player.name} eats a button shroom.`,
     image: player.image,
@@ -42,6 +50,7 @@ const globalDayEvents = [
     killed: false,
     blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} eats a bugle shroom.`,
     image: player.image,
@@ -49,6 +58,7 @@ const globalDayEvents = [
     killed: false,
     blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} eats a cluster shroom.`,
     image: player.image,
@@ -56,6 +66,7 @@ const globalDayEvents = [
     killed: false,
     blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} eats a chubby shroom.`,
     image: player.image,
@@ -63,6 +74,7 @@ const globalDayEvents = [
     killed: false,
     blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} eats a button shroom. It turns out to be poisonous and they die.`,
     image: player.image,
@@ -70,6 +82,7 @@ const globalDayEvents = [
     killed: true,
     blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} eats a bugle shroom. It turns out to be poisonous and they die.`,
     image: player.image,
@@ -77,6 +90,7 @@ const globalDayEvents = [
     killed: true,
     blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} eats a cluster shroom. It turns out to be poisonous and they die.`,
     image: player.image,
@@ -84,6 +98,7 @@ const globalDayEvents = [
     killed: true,
     blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} finds a shelf fungus and uses it to make a long jump possible.`,
     image: player.image,
@@ -91,6 +106,7 @@ const globalDayEvents = [
     killed: false,
     blockedBiomes: ["caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} passes out. Thankfully, their shelf fungus caught them, and they returned to consciousness eventually.`,
     image: player.image,
@@ -98,6 +114,7 @@ const globalDayEvents = [
     killed: false,
     blockedBiomes: ["caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} finds a remedy fungus and uses it to heal themselves and their allies.`,
     image: player.image,
@@ -105,6 +122,7 @@ const globalDayEvents = [
     killed: false,
     blockedBiomes: ["caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} finds a magic bean.`,
     image: player.image,
@@ -112,6 +130,7 @@ const globalDayEvents = [
     killed: false,
     blockedBiomes: ["caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} uses a magic bean to travel upwards.`,
     image: player.image,
@@ -121,6 +140,10 @@ const globalDayEvents = [
   }),
 ];
 
+/* ---------------------------------------------------------
+   GLOBAL NIGHT EVENTS
+--------------------------------------------------------- */
+
 const globalNightEvents = [
   (player, biome) => ({
     text: `${player.name} finds a footprint from a scout of the past.`,
@@ -129,6 +152,7 @@ const globalNightEvents = [
     killed: false,
     blockedBiomes: ["caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} strays too far away from their friends and has an unfortunate encounter with the Scoutmaster.`,
     image: player.image,
@@ -136,6 +160,7 @@ const globalNightEvents = [
     killed: false,
     blockedBiomes: []
   }),
+
   (player, biome) => ({
     text: `${player.name} finds a First Aid Kit in a luggage and treats their wounds.`,
     image: player.image,
@@ -143,6 +168,7 @@ const globalNightEvents = [
     killed: false,
     blockedBiomes: []
   }),
+
   (player, biome) => ({
     text: `${player.name} guides their allies with a lantern.`,
     image: player.image,
@@ -150,6 +176,7 @@ const globalNightEvents = [
     killed: false,
     blockedBiomes: []
   }),
+
   (player, biome) => ({
     text: `${player.name} eats a button shroom.`,
     image: player.image,
@@ -157,6 +184,7 @@ const globalNightEvents = [
     killed: false,
     blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} eats a bugle shroom.`,
     image: player.image,
@@ -164,6 +192,7 @@ const globalNightEvents = [
     killed: false,
     blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} eats a cluster shroom.`,
     image: player.image,
@@ -171,6 +200,7 @@ const globalNightEvents = [
     killed: false,
     blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} eats a chubby shroom.`,
     image: player.image,
@@ -178,6 +208,7 @@ const globalNightEvents = [
     killed: false,
     blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} eats a button shroom. It turns out to be poisonous and they die.`,
     image: player.image,
@@ -185,6 +216,7 @@ const globalNightEvents = [
     killed: true,
     blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} eats a bugle shroom. It turns out to be poisonous and they die.`,
     image: player.image,
@@ -192,6 +224,7 @@ const globalNightEvents = [
     killed: true,
     blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} eats a cluster shroom. It turns out to be poisonous and they die.`,
     image: player.image,
@@ -199,6 +232,7 @@ const globalNightEvents = [
     killed: true,
     blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} finds a shelf fungus and uses it to make a long jump possible.`,
     image: player.image,
@@ -206,6 +240,7 @@ const globalNightEvents = [
     killed: false,
     blockedBiomes: ["caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} passes out. Thankfully, their shelf fungus caught them, and they returned to consciousness eventually.`,
     image: player.image,
@@ -213,6 +248,7 @@ const globalNightEvents = [
     killed: false,
     blockedBiomes: ["caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} finds a remedy fungus and uses it to heal themselves and their allies.`,
     image: player.image,
@@ -220,6 +256,7 @@ const globalNightEvents = [
     killed: false,
     blockedBiomes: ["caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} finds a magic bean.`,
     image: player.image,
@@ -227,6 +264,7 @@ const globalNightEvents = [
     killed: false,
     blockedBiomes: ["caldera", "kiln"]
   }),
+
   (player, biome) => ({
     text: `${player.name} uses a magic bean to travel upwards.`,
     image: player.image,
