@@ -18,6 +18,13 @@ body {
   display: block;
 }
 
+/* Allow simulation screen to be full width */
+#simulation-screen.screen {
+  max-width: none;
+  margin: 0;
+  padding: 2rem;
+}
+
 h1, h2 {
   margin-top: 0;
   text-align: center;
@@ -107,17 +114,18 @@ h1, h2 {
 #event-container {
   margin-top: 2rem;
   position: relative;
-  z-index: 2; /* ensures content sits above background */
+  z-index: 2;
 }
 
+/* TRANSLUCENT EVENT BOX */
 .event-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 700px;
+  color: white;
   text-align: center;
-  gap: 0.5rem;
-  padding: 1rem;
-  border-bottom: 1px solid #ccc;
 }
 
 /* EVENT IMAGES */
@@ -195,47 +203,20 @@ h1, h2 {
   font-weight: bold;
 }
 
-/* ---------------------------------------------------------
-   NEW ADDITIONS (merged cleanly)
---------------------------------------------------------- */
-
-/* FULLSCREEN BACKGROUND */
+/* FULLSCREEN BACKGROUND FIXED */
 #simulation-screen {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition: background-image 0.4s ease;
-  z-index: 1;
+  min-height: 100vh;
 }
 
-/* TITLE OUTLINE */
+/* TITLE WITH WHITE BORDER */
 #sim-title {
-  position: relative;
-  z-index: 2;
-  color: white;
+  color: black;
   font-weight: bold;
   font-size: 32px;
   text-align: center;
   margin-top: 20px;
-  text-shadow:
-    -2px -2px 0 #000,
-     2px -2px 0 #000,
-    -2px  2px 0 #000,
-     2px  2px 0 #000;
-}
-
-/* TRANSLUCENT EVENT BOX */
-.event-card {
-  background: rgba(0, 0, 0, 0.45);
-  padding: 20px;
-  border-radius: 12px;
-  margin: 20px auto;
-  max-width: 700px;
-  color: white;
-  text-align: center;
+  -webkit-text-stroke: 2px white;
 }
