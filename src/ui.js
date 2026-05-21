@@ -70,7 +70,6 @@ export function renderEvents(state) {
   eventContainer.innerHTML = "";
   simTitle.textContent = `${state.biome.toUpperCase()} — ${state.phase.toUpperCase()}`;
 
-  // Set biome background
   setBiomeBackground(state.biome);
 
   state.log.forEach(entry => {
