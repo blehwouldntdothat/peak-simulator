@@ -8,7 +8,7 @@ export const kilnDayEvents = [
     (player, biome) => ({
     text: `${player.name} falls into the lava.`,
     image: player.image,
-    extraImage: "images/items/Lava.png",
+    extraImage: "images/hazards/Lava.png",
     killed: true
   }),
     (player, biome) => ({
