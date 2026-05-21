@@ -14,20 +14,6 @@ export const alpineDayEvents = [
   }),
 
   (player, biome) => ({
-    text: `${player.name} passes out, but survives after saving their fall with a shelf fungus.`,
-    image: player.image,
-    extraImage: "images/items/Shelf_Fungus.png",
-    killed: false
-  }),
-
-  (player, biome) => ({
-    text: `${player.name} heals all remaining survivors with a remedy fungus.`,
-    image: player.image,
-    extraImage: "images/hazards/Remedy_Fungus.png",
-    killed: false
-  }),
-
-  (player, biome) => ({
     text: `${player.name} from one side of a ditch to the other using a magic bean.`,
     image: player.image,
     extraImage: "images/hazards/Magic_Bean.png",
@@ -95,6 +81,7 @@ export const alpineDayEvents = [
     image: player.image,
     extraImage: "images/items/Chain_Launcher.png",
     killed: false
+  }),
     
   (player, biome) => ({
     text: `${player.name} runs out of stamina while climbing a chain, falling to their death.`,
@@ -108,6 +95,7 @@ export const alpineDayEvents = [
     image: player.image,
     extraImage: "images/items/Portable_Stove.png",
     killed: false
+  }),
 ];
 
 export const alpineNightEvents = [
@@ -126,20 +114,6 @@ export const alpineNightEvents = [
   }),
 
   (player, biome) => ({
-    text: `${player.name} passes out, but survives after saving their fall with a shelf fungus.`,
-    image: player.image,
-    extraImage: "images/items/Shelf_Fungus.png",
-    killed: false
-  }),
-
-  (player, biome) => ({
-    text: `${player.name} heals all remaining survivors with a remedy fungus.`,
-    image: player.image,
-    extraImage: "images/hazards/Remedy_Fungus.png",
-    killed: false
-  }),
-
-  (player, biome) => ({
     text: `${player.name} from one side of a ditch to the other using a magic bean.`,
     image: player.image,
     extraImage: "images/hazards/Magic_Bean.png",
@@ -207,6 +181,7 @@ export const alpineNightEvents = [
     image: player.image,
     extraImage: "images/items/Chain_Launcher.png",
     killed: false
+  }),
     
   (player, biome) => ({
     text: `${player.name} runs out of stamina while climbing a chain, falling to their death.`,
@@ -220,4 +195,5 @@ export const alpineNightEvents = [
     image: player.image,
     extraImage: "images/items/Portable_Stove.png",
     killed: false
+  }),
 ];
