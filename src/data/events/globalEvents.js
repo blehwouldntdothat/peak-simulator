@@ -6,10 +6,6 @@ import { mesaDayEvents, mesaNightEvents } from "./mesaEvents.js";
 import { calderaDayEvents, calderaNightEvents } from "./calderaEvents.js";
 import { kilnDayEvents, kilnNightEvents } from "./kilnEvents.js";
 
-/* ---------------------------------------------------------
-   GLOBAL EVENTS — formatted exactly like your biome events
---------------------------------------------------------- */
-
 const globalDayEvents = [
   (player, biome) => ({
     text: `${player.name} finds a footprint from a scout of the past.`,
