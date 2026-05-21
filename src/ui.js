@@ -54,12 +54,8 @@ export function renderEvents(state) {
     card.className = "event-card";
 
     if (entry.group) {
-      // Campfire group display
       const icons = entry.group
-        .map(
-          p =>
-            `<img class="campfire-icon ${p.alive ? "" : "dead-icon"}" src="${p.image}">`
-        )
+        .map(p => `<img class="campfire-icon ${p.alive ? "" : "dead-icon"}" src="${p.image}">`)
         .join("");
 
       card.innerHTML = `
@@ -67,10 +63,9 @@ export function renderEvents(state) {
         <div class="campfire-row">${icons}</div>
       `;
     } else {
-      // Normal event with optional extra image
       card.innerHTML = `
         <div class="event-images">
-          <img class="main-icon" src="${entry.image || ""}">
+          <img class="main-icon ${entry.killed ? "dead-icon" : ""}" src="${entry.image}">
           ${entry.extraImage ? `<img class="extra-icon" src="${entry.extraImage}">` : ""}
         </div>
         <div class="event-text">${entry.text}</div>
@@ -88,12 +83,10 @@ export function renderSummary(placements) {
     const div = document.createElement("div");
     div.className = "summary-entry";
 
-    const status = p.alive
-      ? "Alive at Peak"
-      : `Died (Order ${p.deathOrder})`;
+    const status = p.alive ? "Alive at Peak" : `Died (Order ${p.deathOrder})`;
 
     div.innerHTML = `
-      <img src="${p.image}" />
+      <img src="${p.image}" class="${p.alive ? "" : "dead-icon"}" />
       <div>
         <div class="summary-name">${p.name}</div>
         <div class="summary-status">${status}</div>
@@ -104,10 +97,5 @@ export function renderSummary(placements) {
   });
 }
 
-proceedBtn.addEventListener("click", () => {
-  proceedSimulation();
-});
-
-returnMenuBtn.addEventListener("click", () => {
-  showScreen("main-menu");
-});
+proceedBtn.addEventListener("click", () => proceedSimulation());
+returnMenuBtn.addEventListener("click", () => showScreen("main-menu"));
