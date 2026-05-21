@@ -12,7 +12,7 @@ const globalDayEvents = [
     image: player.image,
     extraImage: "images/badge/Footprint.png",
     killed: false,
-    blockedBiomes: ["caldera"], ["kiln"]
+    blockedBiomes: ["caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} strays too far away from their friends and has an unfortunate encounter with the Scoutmaster.`,
@@ -40,77 +40,77 @@ const globalDayEvents = [
     image: player.image,
     extraImage: "images/items/Button_Shroom.png",
     killed: false,
-    blockedBiomes: ["roots"], ["alpine"], ["caldera"], ["kiln"]
+    blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} eats a bugle shroom.`,
     image: player.image,
     extraImage: "images/items/Bugle_Shroom.png",
     killed: false,
-    blockedBiomes: ["roots"], ["alpine"], ["caldera"], ["kiln"]
+    blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} eats a cluster shroom.`,
     image: player.image,
     extraImage: "images/items/Cluster_Shroom.png",
     killed: false,
-    blockedBiomes: ["roots"], ["alpine"], ["caldera"], ["kiln"]
+    blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} eats a chubby shroom.`,
     image: player.image,
     extraImage: "images/items/Chubby_Shroom.png",
     killed: false,
-    blockedBiomes: ["roots"], ["alpine"], ["caldera"], ["kiln"]
+    blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} eats a button shroom. It turns out to be poisonous and they die.`,
     image: player.image,
     extraImage: "images/items/Button_Shroom_(Poisonous).png",
     killed: true,
-    blockedBiomes: ["roots"], ["alpine"], ["caldera"], ["kiln"]
+    blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} eats a bugle shroom. It turns out to be poisonous and they die.`,
     image: player.image,
     extraImage: "images/items/Bugle_Shroom_(Poisonous).png",
     killed: true,
-    blockedBiomes: ["roots"], ["alpine"], ["caldera"], ["kiln"]
+    blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} eats a cluster shroom. It turns out to be poisonous and they die.`,
     image: player.image,
     extraImage: "images/items/Cluster_Shroom_(Poisonous).png",
     killed: true,
-    blockedBiomes: ["roots"], ["alpine"], ["caldera"], ["kiln"]
+    blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} finds a shelf fungus and uses it to make a long jump possible.`,
     image: player.image,
     extraImage: "images/items/Shelf_Fungus.png",
     killed: false,
-    blockedBiomes: ["caldera"], ["kiln"]
+    blockedBiomes: ["caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} passes out. Thankfully, their shelf fungus caught them, and they returned to consciousness eventually.`,
     image: player.image,
     extraImage: "images/items/Shelf_Fungus.png",
     killed: false,
-    blockedBiomes: ["caldera"], ["kiln"]
+    blockedBiomes: ["caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} finds a remedy fungus and uses it to heal themselves and their allies.`,
     image: player.image,
     extraImage: "images/items/Remedy_Fungus.png",
     killed: false,
-    blockedBiomes: ["caldera"], ["kiln"]
+    blockedBiomes: ["caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} finds a magic bean.`,
     image: player.image,
     extraImage: "images/items/Magic_Bean.png",
     killed: false,
-    blockedBiomes: ["caldera"], ["kiln"]
+    blockedBiomes: ["caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} uses a magic bean to travel upwards.`,
@@ -127,7 +127,7 @@ const globalNightEvents = [
     image: player.image,
     extraImage: "images/badge/Footprint.png",
     killed: false,
-    blockedBiomes: ["caldera"], ["kiln"]
+    blockedBiomes: ["caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} strays too far away from their friends and has an unfortunate encounter with the Scoutmaster.`,
@@ -155,77 +155,77 @@ const globalNightEvents = [
     image: player.image,
     extraImage: "images/items/Button_Shroom.png",
     killed: false,
-    blockedBiomes: ["roots"], ["alpine"], ["caldera"], ["kiln"]
+    blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} eats a bugle shroom.`,
     image: player.image,
     extraImage: "images/items/Bugle_Shroom.png",
     killed: false,
-    blockedBiomes: ["roots"], ["alpine"], ["caldera"], ["kiln"]
+    blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} eats a cluster shroom.`,
     image: player.image,
     extraImage: "images/items/Cluster_Shroom.png",
     killed: false,
-    blockedBiomes: ["roots"], ["alpine"], ["caldera"], ["kiln"]
+    blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} eats a chubby shroom.`,
     image: player.image,
     extraImage: "images/items/Chubby_Shroom.png",
     killed: false,
-    blockedBiomes: ["roots"], ["alpine"], ["caldera"], ["kiln"]
+    blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} eats a button shroom. It turns out to be poisonous and they die.`,
     image: player.image,
     extraImage: "images/items/Button_Shroom_(Poisonous).png",
     killed: true,
-    blockedBiomes: ["roots"], ["alpine"], ["caldera"], ["kiln"]
+    blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} eats a bugle shroom. It turns out to be poisonous and they die.`,
     image: player.image,
     extraImage: "images/items/Bugle_Shroom_(Poisonous).png",
     killed: true,
-    blockedBiomes: ["roots"], ["alpine"], ["caldera"], ["kiln"]
+    blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} eats a cluster shroom. It turns out to be poisonous and they die.`,
     image: player.image,
     extraImage: "images/items/Cluster_Shroom_(Poisonous).png",
     killed: true,
-    blockedBiomes: ["roots"], ["alpine"], ["caldera"], ["kiln"]
+    blockedBiomes: ["roots", "alpine", "caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} finds a shelf fungus and uses it to make a long jump possible.`,
     image: player.image,
     extraImage: "images/items/Shelf_Fungus.png",
     killed: false,
-    blockedBiomes: ["caldera"], ["kiln"]
+    blockedBiomes: ["caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} passes out. Thankfully, their shelf fungus caught them, and they returned to consciousness eventually.`,
     image: player.image,
     extraImage: "images/items/Shelf_Fungus.png",
     killed: false,
-    blockedBiomes: ["caldera"], ["kiln"]
+    blockedBiomes: ["caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} finds a remedy fungus and uses it to heal themselves and their allies.`,
     image: player.image,
     extraImage: "images/items/Remedy_Fungus.png",
     killed: false,
-    blockedBiomes: ["caldera"], ["kiln"]
+    blockedBiomes: ["caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} finds a magic bean.`,
     image: player.image,
     extraImage: "images/items/Magic_Bean.png",
     killed: false,
-    blockedBiomes: ["caldera"], ["kiln"]
+    blockedBiomes: ["caldera", "kiln"]
   }),
   (player, biome) => ({
     text: `${player.name} uses a magic bean to travel upwards.`,
