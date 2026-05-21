@@ -18,13 +18,6 @@ body {
   display: block;
 }
 
-/* Allow simulation screen to be full width */
-#simulation-screen.screen {
-  max-width: none;
-  margin: 0;
-  padding: 2rem;
-}
-
 h1, h2 {
   margin-top: 0;
   text-align: center;
