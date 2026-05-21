@@ -14,6 +14,27 @@ const proceedBtn = document.getElementById("proceed-btn");
 const summaryContainer = document.getElementById("summary-container");
 const returnMenuBtn = document.getElementById("return-menu-btn");
 
+/* ---------------------------------------------------------
+   SET BACKGROUND BASED ON BIOME
+--------------------------------------------------------- */
+
+export function setBiomeBackground(biome) {
+  const screen = document.getElementById("simulation-screen");
+
+  const backgrounds = {
+    shore: "images/backgrounds/shore.png",
+    tropics: "images/backgrounds/tropics.png",
+    roots: "images/backgrounds/roots.png",
+    alpine: "images/backgrounds/alpine.png",
+    mesa: "images/backgrounds/mesa.png",
+    caldera: "images/backgrounds/caldera.png",
+    kiln: "images/backgrounds/kiln.png",
+    peak: "images/backgrounds/peak.png"
+  };
+
+  screen.style.backgroundImage = `url(${backgrounds[biome]})`;
+}
+
 export function showScreen(id) {
   Object.values(screens).forEach(s => s.classList.remove("active"));
   screens[id].classList.add("active");
@@ -48,6 +69,9 @@ export function renderCastList() {
 export function renderEvents(state) {
   eventContainer.innerHTML = "";
   simTitle.textContent = `${state.biome.toUpperCase()} — ${state.phase.toUpperCase()}`;
+
+  // NEW: set background
+  setBiomeBackground(state.biome);
 
   state.log.forEach(entry => {
     const card = document.createElement("div");
