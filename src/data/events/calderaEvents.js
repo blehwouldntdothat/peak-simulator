@@ -44,7 +44,7 @@ export const calderaDayEvents = [
   (player, biome) => ({
     text: `${player.name} falls off the side of the temple and hits their head on a rock when falling.`,
     image: player.image,
-    extraImage: "images/hazards/Template.png",
+    extraImage: "images/hazards/Temple.png",
     killed: true
   }),
   (player, biome) => ({
@@ -107,7 +107,7 @@ export const calderaNightEvents = [
   (player, biome) => ({
     text: `${player.name} falls off the side of the temple and hits their head on a rock when falling.`,
     image: player.image,
-    extraImage: "images/hazards/Template.png",
+    extraImage: "images/hazards/Temple.png",
     killed: true
   }),
   (player, biome) => ({
