@@ -3,10 +3,7 @@ import { cast } from "../data/cast.js";
 export function runCampfirePhase(state) {
   state.log = [];
 
-  const hadDead = cast.some(c => !c.alive);
-
-  // Always revive if anyone is dead
-  if (hadDead) {
+  if (state.statueEnabled && cast.some(c => !c.alive)) {
     cast.forEach(c => {
       c.alive = true;
       c.deathOrder = null;
@@ -21,13 +18,6 @@ export function runCampfirePhase(state) {
   const alive = cast.filter(c => c.alive);
   const dead = cast.filter(c => !c.alive);
 
-  state.log.push({
-    text: "Alive:",
-    group: alive
-  });
-
-  state.log.push({
-    text: "Dead:",
-    group: dead
-  });
+  state.log.push({ text: "Alive:", group: alive });
+  state.log.push({ text: "Dead:", group: dead });
 }
