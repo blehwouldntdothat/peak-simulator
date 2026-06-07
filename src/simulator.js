@@ -1,101 +1,74 @@
-import { BIOME_ORDER } from "./data/biomes.js";
+import { runDayPhase } from "./phases/dayPhase.js";
+import { runNightPhase } from "./phases/nightPhase.js";
+import { runCampfirePhase } from "./phases/campfirePhase.js";
 import { cast } from "./data/cast.js";
-import { settings } from "./data/settings.js";
+import { renderEvents, renderSummary } from "./ui.js";
 
-import { runDayPhase } from "./engine/dayPhase.js";
-import { runNightPhase } from "./engine/nightPhase.js";
-import { runCampfirePhase } from "./engine/campfirePhase.js";
-import { applyStatueResurrection } from "./engine/statue.js";
-import { computePlacements } from "./engine/placements.js";
-import { renderEvents, renderSummary, showScreen } from "./ui.js";
-
-export const simState = {
-  biomeIndex: 0,
-  biome: null,
-  phase: "day",   // "day" | "night" | "campfire"
-  dayNumber: 1,
-  log: []
+export const state = {
+  biome: "shore",
+  phase: "day",
+  log: [],
+  statueEnabled: false
 };
 
-function resolveBiome(index) {
-  const slot = BIOME_ORDER[index];
-
-  if (slot === "BIOME_2") {
-    if (settings.biome2 === "random") {
-      return Math.random() < 0.5 ? "tropics" : "roots";
-    }
-    return settings.biome2;
-  }
-
-  if (slot === "BIOME_3") {
-    if (settings.biome3 === "random") {
-      return Math.random() < 0.5 ? "alpine" : "mesa";
-    }
-    return settings.biome3;
-  }
-
-  return slot;
-}
-
-export function startSimulation() {
-  simState.biomeIndex = 0;
-  simState.biome = resolveBiome(0);
-  simState.phase = "day";
-  simState.dayNumber = 1;
-  simState.log = [];
-
-  // First screen: SHORE — DAY
-  runDayPhase(simState);
-  renderEvents(simState);
-  showScreen("simulation-screen");
-}
-
 export function proceedSimulation() {
-  const biome = simState.biome;
 
-  // Peak is summary only
-  if (biome === "peak") {
-    const placements = computePlacements();
-    renderSummary(placements);
-    showScreen("summary-screen");
+  // 1. TOTAL WIPEOUT CHECK — overrides everything
+  if (cast.every(c => !c.alive)) {
+    state.biome = "peak";
+    state.phase = "summary";
+    renderSummary(cast);
     return;
   }
 
-  if (simState.phase === "day") {
-    // Move to NIGHT
-    simState.phase = "night";
-    runNightPhase(simState);
-    renderEvents(simState);
+  // 2. KILN SKIP CHECK — skip campfire entirely
+  if (state.biome === "kiln" && state.phase === "night") {
+    state.biome = "peak";
+    state.phase = "summary";
+    renderSummary(cast);
     return;
   }
 
-  if (simState.phase === "night") {
-    // Move to CAMPFIRE
-    simState.phase = "campfire";
-    runCampfirePhase(simState);
-    renderEvents(simState);
+  // 3. NORMAL PHASE FLOW
+  if (state.phase === "day") {
+    runDayPhase(state);
+    state.phase = "night";
+    renderEvents(state);
     return;
   }
 
-  if (simState.phase === "campfire") {
-    // Statue + next biome
-    applyStatueResurrection(simState);
+  if (state.phase === "night") {
+    runNightPhase(state);
 
-    simState.biomeIndex++;
-    simState.biome = resolveBiome(simState.biomeIndex);
-
-    // If we reached PEAK, go straight to summary
-    if (simState.biome === "peak") {
-      const placements = computePlacements();
-      renderSummary(placements);
-      showScreen("summary-screen");
+    // If biome is NOT kiln → go to campfire
+    if (state.biome !== "kiln") {
+      state.phase = "campfire";
+      renderEvents(state);
       return;
     }
 
-    simState.phase = "day";
-    simState.dayNumber++;
-    runDayPhase(simState);
-    renderEvents(simState);
+    // If biome IS kiln → handled above
+  }
+
+  if (state.phase === "campfire") {
+    runCampfirePhase(state);
+
+    // After campfire → next biome
+    state.biome = getNextBiome(state.biome);
+    state.phase = "day";
+
+    renderEvents(state);
     return;
   }
+
+  if (state.phase === "summary") {
+    renderSummary(cast);
+  }
 }
+
+function getNextBiome(current) {
+  const order = ["shore", "tropics", "roots", "alpine", "mesa", "caldera", "kiln", "peak"];
+  const index = order.indexOf(current);
+  return order[index + 1] || "peak";
+}
+
